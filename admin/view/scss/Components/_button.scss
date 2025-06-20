@@ -1,0 +1,47 @@
+@use '../../../../assets/scss/Helper/variables';
+
+.btn {
+  border: 0;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: variables.$primary-color;
+  transition: all 0.15s;
+
+  &:hover {
+    outline: none;
+    background-color: variables.$hover-color;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #404b61, inset 0 0 0 2px #ffffff;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background-color: variables.$primary-color;
+  }
+}
+
+.btn-banner {
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+
+#btnDelete {
+  background-color: variables.$delete-color;
+
+  &:hover {
+    background-color: variables.$delete-hover;
+  }
+}
+
+#btnEdit,
+#btnAddPhone,
+#btnUpdate {
+  background-color: variables.$edit-color;
+
+  &:hover {
+    background-color: variables.$edit-hover;
+  }
+}

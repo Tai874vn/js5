@@ -1,0 +1,26 @@
+nav.black {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.banner-image {
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url(../img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+
+  .btn {
+    font-size: 18px;
+  }
+}
+
+.banner-phone-image img {
+  width: 800px;
+}
+
+.star-rating a {
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 10px;
+
+  &:hover {
+    color: #fff;
+  }
+}

@@ -1,0 +1,46 @@
+.product {
+  display: flex;
+  flex-direction: column;
+
+  &__thumbnail {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    flex-grow: 1;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__stuff,
+  &__options {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  &__price {
+    text-align: right;
+  }
+
+  &__1 {
+    display: flex;
+  }
+
+  &__2 {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+
+    div {
+      flex: 1 1 auto;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../../../assets/scss/Helper/variables';
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+body {
+  padding-top: 70px;
+  margin-bottom: 0;
+  background-color: variables.$main-bg;
+}
+
+.gradient-custom {
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+}

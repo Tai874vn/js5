@@ -1,0 +1,13 @@
+@use '../Helper/variables';
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+body {
+  padding-top: 70px;
+  margin-bottom: 0;
+  background-color: variables.$main-bg;
+}

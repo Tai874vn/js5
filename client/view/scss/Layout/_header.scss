@@ -1,0 +1,27 @@
+header {
+  #navbarColor01 {
+    a {
+      transition: 0.3s all ease-in-out;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+.nav1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.nav2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.black {
+  background: rgba(0, 0, 0, 0.8);
+}

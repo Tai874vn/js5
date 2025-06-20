@@ -3,12 +3,14 @@
 @use './Helper/mixin';
 @use './Helper/responsive';
 
+// Base
+@use "./Base/customize";
+
 // Components
 @use './Components/image';
 
-// Page
-@use "./Page/index.scss";
+@use './Layout/header';
+@use './Layout/footer';
+@use './Layout/homeEffect';
 
-
-// Base
-@use "./Base/customize";
+@use './Page/index.scss'

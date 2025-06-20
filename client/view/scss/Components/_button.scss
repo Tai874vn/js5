@@ -1,0 +1,50 @@
+.btn {
+  position: relative;
+  border: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Muli';
+  font-size: 14px;
+  line-height: 14px;
+  background-color: #294d5c;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    outline: none;
+    background-color: #5f9db8;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none !important;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  & + .btn {
+    margin-left: 8px;
+  }
+}
+
+.red-btn {
+  background-color: #df461f;
+
+  &:hover {
+    background-color: #e96443;
+  }
+}
+
+.yellow-btn {
+  background-color: #f0b80f;
+
+  &:hover {
+    background-color: #f1ca55;
+  }
+}
