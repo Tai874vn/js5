@@ -1,0 +1,21 @@
+@use './mixin';
+
+.container {
+    @include mixin.respond-up(lg) {
+        max-width: 960px;
+    }
+
+    @include mixin.respond-up(xl) {
+        max-width: 1140px;
+    }
+
+    @include mixin.respond-up(xxl) {
+        max-width: 1320px;
+    }
+}
+
+.d-lg-flex {
+    @include mixin.respond-up(lg) {
+        display: flex;
+    }
+}

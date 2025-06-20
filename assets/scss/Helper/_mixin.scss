@@ -1,0 +1,29 @@
+@use './variables';
+
+@mixin respond-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: variables.$breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: variables.$breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: variables.$breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: variables.$breakpoint-xl) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: variables.$breakpoint-xxl) { @content; }
+  }
+}
+
+@mixin respond-down($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: (variables.$breakpoint-sm - 0.02px)) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: (variables.$breakpoint-md - 0.02px)) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: (variables.$breakpoint-lg - 0.02px)) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: (variables.$breakpoint-xl - 0.02px)) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (max-width: (variables.$breakpoint-xxl - 0.02px)) { @content; }
+  }
+}
