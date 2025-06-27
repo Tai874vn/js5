@@ -10,7 +10,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
+
+    <link rel="stylesheet" href="./css/modal.css  " />
+
     <link rel="stylesheet" href="./css/style.css" />
+
     <title>Document</title>
   </head>
   <body>
@@ -98,11 +112,55 @@
               type="button"
               class="btn btn-banner"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target="#actionModal"
               id="addPhoneForm"
             >
               <i class="fa-solid fa-circle-plus me-2"></i> Add Phone
             </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-search"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                id="searchInput"
+                placeholder="Search by phone name..."
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-filter"></i>
+              </span>
+              <select class="form-control" id="priceFilter">
+                <option value="">Filter by Price</option>
+                <option value="asc">Price: Low to High</option>
+                <option value="desc">Price: High to Low</option>
+              </select>
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="clearFilters"
+              >
+                <i class="fa-solid fa-times"></i> Clear
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Counter -->
+        <div class="row mb-2">
+          <div class="col-12">
+            <small class="text-muted" id="resultsCount"
+              >Loading phones...</small
+            >
           </div>
         </div>
 
@@ -122,18 +180,18 @@
           </table>
         </div>
 
-        <div class="modal fade" id="exampleModal">
+        <div
+          class="modal fade"
+          id="actionModal"
+          style="display: none"
+          aria-hidden="true"
+          role="dialog"
+        >
           <div class="modal-dialog">
             <div class="modal-content">
               <header class="head-form mb-0">
                 <h3 id="header-title">Phone Management</h3>
               </header>
-
-              <!-- Modal Header -->
-              <!-- 	<div class="modal-header">
-            <h4 class="modal-title" id="modal-title">Modal Heading</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div> -->
 
               <!-- Modal body -->
               <div class="modal-body">
@@ -153,7 +211,7 @@
                         placeholder="Phone name"
                       />
                     </div>
-                    <span class="sp-thongbao" id="tbname"></span>
+                    <span class="sp-thongbao" id="tbname">‍</span>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
@@ -170,7 +228,7 @@
                         placeholder="Price"
                       />
                     </div>
-                    <span class="sp-thongbao" id="tbprice"></span>
+                    <span class="sp-thongbao" id="tbprice">‍</span>
                   </div>
 
                   <div class="form-group">
@@ -189,7 +247,7 @@
                       />
                     </div>
 
-                    <span class="sp-thongbao" id="tbscreen"></span>
+                    <span class="sp-thongbao" id="tbscreen">‍</span>
                   </div>
 
                   <div class="form-group">
@@ -208,7 +266,7 @@
                       />
                     </div>
 
-                    <span class="sp-thongbao" id="tbbackCam"></span>
+                    <span class="sp-thongbao" id="tbbackCam">‍</span>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
@@ -226,7 +284,7 @@
                       />
                     </div>
 
-                    <span class="sp-thongbao" id="tbfrontCam"></span>
+                    <span class="sp-thongbao" id="tbfrontCam">‍</span>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
@@ -244,7 +302,7 @@
                       />
                     </div>
 
-                    <span class="sp-thongbao" id="tbimg"></span>
+                    <span class="sp-thongbao" id="tbimg">‍</span>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
@@ -262,7 +320,7 @@
                       />
                     </div>
 
-                    <span class="sp-thongbao" id="tbdesc"></span>
+                    <span class="sp-thongbao" id="tbdesc">‍</span>
                   </div>
 
                   <div class="form-group">
@@ -274,22 +332,32 @@
                       </div>
                       <select class="form-control" name="chucvu" id="type">
                         <option selected="" disabled="">Select brand</option>
-                        <option>Apple</option>
-                        <option>Samsung</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Samsung">Samsung</option>
                       </select>
                     </div>
 
-                    <span class="sp-thongbao" id="tbtype"></span>
+                    <span class="sp-thongbao" id="tbtype">‍</span>
                   </div>
                 </form>
               </div>
 
               <!-- Modal footer -->
               <div class="modal-footer" id="modal-footer">
-                <button type="button" class="btn" id="btnAddPhone">
+                <button
+                  type="button"
+                  class="btn"
+                  id="btnAddPhone"
+                  style="display: inline-block"
+                >
                   Add Phone
                 </button>
-                <button id="btnUpdate" type="button" class="btn">
+                <button
+                  id="btnUpdate"
+                  type="button"
+                  class="btn"
+                  style="display: none"
+                >
                   Update Phone
                 </button>
                 <button
@@ -431,5 +499,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"
+      integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.10.0/axios.min.js"
+      integrity="sha512-WkZrEcQ5LMyNy6Y2PQf+Tu3vMcsmKKRKuPXtJSTHQJ3mpuvLRlA5dlDDhrrcXfyWr6Z/y3wIMfjfqVFO/gDZYQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="../controller/main.js"></script>
   </body>
 </html>
