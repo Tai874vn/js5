@@ -15,7 +15,20 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
     />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- Slick Carousel Theme -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./scss/style.css" />
     <title>Phone Store</title>
   </head>
   <body>
@@ -138,11 +151,16 @@
                 aria-label="Default select example"
               >
                 <option value="all">All Brands</option>
-                <option value="Apple">Apple</option>
+                <option value="Iphone">Apple</option>
                 <option value="Samsung">Samsung</option>
               </select>
             </div>
-            <div class="row mx-0 gy-4" id="phoneList"></div>
+            <!-- Product Carousel -->
+          <!-- HTML -->
+          <div class="product-carousel">
+            <div class="carousel-inner-wrapper"></div>
+          </div>
+          </div>
           </div>
         </div>
       </main>
@@ -321,7 +339,7 @@
       </div>
       <!-- Copyright -->
     </footer>
-
-    <script src="../controller/main.js"></script>
+    <script type="module" src="../controller/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
